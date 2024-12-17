@@ -1,0 +1,33 @@
+{
+  "name": "@epehc/crm-shared-utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "middlewares",
+    "enums",
+    "types"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
