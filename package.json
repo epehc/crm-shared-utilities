@@ -1,6 +1,6 @@
 {
-  "name": "@epehc/crm-shared-utilities",
-  "version": "1.0.6",
+  "name": "@epehc/sharedutilities",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -16,6 +16,10 @@
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epehc/crm-shared-utilities.git"
   },
   "keywords": [],
   "author": "",
