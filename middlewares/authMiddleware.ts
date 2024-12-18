@@ -13,7 +13,11 @@ export const authenticateJWT = (req: Request, res: Response, next: NextFunction)
     const token = authHeader.split(" ")[1];
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: string; roles: string[] };
+        const decoded = jwt.verify(token, process.env.JWT_SECRET!) as {
+            id: string;
+            email: string;
+            roles: string[]
+        };
 
         // Validate roles to ensure they match the UserRole enum
         const validatedRoles = decoded.roles.filter((role) =>
@@ -22,6 +26,7 @@ export const authenticateJWT = (req: Request, res: Response, next: NextFunction)
 
         req.user = {
             id: decoded.id,
+            email: decoded.email,
             roles: validatedRoles, // Only valid UserRole values
         };
 
