@@ -6,16 +6,19 @@ export const authorize = (requiredRoles: UserRole[]) => {
         const user = req.user;
 
         if (!user) {
-            return res.status(403).json({ error: "Access denied: No user found" });
+            res.status(403).json({ error: "Access denied: No user found" });
+            return
         }
 
         if (!user.roles || user.roles.length === 0) {
-            return res.status(403).json({ error: "Access denied: No roles assigned" });
+            res.status(403).json({ error: "Access denied: No roles assigned" });
+            return
         }
 
         const hasRole = user.roles.some((role) => requiredRoles.includes(role));
         if (!hasRole) {
-            return res.status(403).json({ error: "Access denied: Insufficient privileges" });
+            res.status(403).json({ error: "Access denied: Insufficient privileges" });
+            return
         }
 
         next();
