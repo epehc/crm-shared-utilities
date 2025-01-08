@@ -14,4 +14,5 @@ declare global {
     }
 }
 
-export type Request = express.Request;
+export {}
+
