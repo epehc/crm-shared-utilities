@@ -1,6 +1,6 @@
 {
   "name": "@epehc/sharedutilities",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "",
   "main": "index.js",
   "types": "types/express.d.ts",
@@ -15,6 +15,9 @@
     "types",
     "utils"
   ],
+  "exports": {
+    "./types/express": "./types/express.d.ts"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
