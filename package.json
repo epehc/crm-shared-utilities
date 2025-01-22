@@ -19,7 +19,7 @@
     "./types/express": "./types/express.d.ts",
     "./middlewares/authMiddleware": "./middlewares/authMiddleware.js",
     "./middlewares/authorize": "./middlewares/authorize.js",
-    "./enunms/userRole": "./enums/userRole.js",
+    "./enums/userRole": "./enums/userRole.js",
     "./utils/logger": "./utils/logger.js",
     "./utils/swagger": "./utils/swagger.js"
   },
