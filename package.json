@@ -1,6 +1,6 @@
 {
   "name": "@epehc/sharedutilities",
-  "version": "1.1.10",
+  "version": "1.1.12",
   "description": "",
   "main": "index.js",
   "types": "types/express.d.ts",
@@ -18,7 +18,10 @@
   "exports": {
     "./types/express": "./types/express.d.ts",
     "./middlewares/authMiddleware": "./middlewares/authMiddleware.js",
-    "./middlewares/authorize": "./middlewares/authorize.js"
+    "./middlewares/authorize": "./middlewares/authorize.js",
+    "./enunms/userRoles": "./enums/userRoles.js",
+    "./utils/logger": "./utils/logger.js",
+    "./utils/swagger": "./utils/swagger.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
