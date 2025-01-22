@@ -1,6 +1,8 @@
 import jwt from "jsonwebtoken";
-import { Request, Response, NextFunction } from "express";
+import {Response, NextFunction } from "express";
 import { UserRole } from "../enums/userRole";
+import { Request } from "../types/express";
+
 
 export const authenticateJWT = (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
@@ -19,16 +21,22 @@ export const authenticateJWT = (req: Request, res: Response, next: NextFunction)
             roles: string[]
         };
 
+        console.log('decoded:', decoded)
+
         // Validate roles to ensure they match the UserRole enum
         const validatedRoles = decoded.roles.filter((role) =>
             Object.values(UserRole).includes(role as UserRole)
         ) as UserRole[];
+
+        console.log('validatedRoles:', validatedRoles)
 
         req.user = {
             id: decoded.id,
             email: decoded.email,
             roles: validatedRoles, // Only valid UserRole values
         };
+
+        console.log('req.user:', req.user)
 
         next();
     } catch (error) {
