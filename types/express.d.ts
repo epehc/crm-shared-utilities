@@ -1,3 +1,4 @@
+import * as express from "express";
 import { UserRole } from "../enums/userRole";
 
 declare global {
@@ -14,5 +15,5 @@ declare global {
     }
 }
 
-export {}
+export type Request = express.Request;
 
